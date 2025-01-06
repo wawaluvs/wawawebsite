@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LV Fashion Blog</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Lora:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Lora', serif;
+            background-color: white;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+/* Header Styling */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000;
+    color: #fff;
+     position: sticky;
+    padding: 10px 20px;
+    top: 0; 
+    z-index: 1000;
+
+}
+
+
+/* Logo Styling */
+.logo h1 {
+    font-family: 'Futura', sans-serif;
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    color: #fff;
+    margin: 0;
+     flex-grow: 1;
+}
+
+/* Navigation Styling */
+nav {
+    display: flex;
+    align-items: center;
+    flex-grow: 2;
+    justify-content: flex-end; 
+}
+
+/* Navigation Links Styling */
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin-right: 30px;
+    font-size: 1.2rem;
+     margin-right: 20px;
+}
+
+/* Links Styling */
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding: 10px 15px;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+/* Dropdown Styling */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 20;
+    background-color:  #222;
+    min-width: 200px;
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+   left: 50%;
+transform: translateX(-50%);
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown .dropdown-menu .dropdown-menu {
+    left: 100%; /* Position it to the right of the 'Women' menu */
+    top: 0;     /* Align it with the top */
+}
+
+.dropdown-menu li {
+    padding: 10px;
+}
+
+.dropdown-menu li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 15px;
+    display: block;
+     transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+.dropdown-menu li a:hover {
+    background-color:  #ffd700; 
+    color: #222; 
+    text-decoration: none; 
+}
+
+/* Logo Container */
+.logo-container {
+    text-align: center;
+    flex: 1;
+}
+
+.logo-container h1 {
+    font-size: 2rem;
+    margin: 0;
+}
+
+/* Menu */
+.menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.menu li {
+    position: relative;
+    padding: 5px 10px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.1rem;
+}
+
+.menu a:hover {
+    text-decoration: underline;
+}
+
+/* Dropdown Menu */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    min-width: 160px;
+    z-index: 1;
+    border-radius: 5px;
+}
+
+.dropdown .dropdown-content a {
+    color: #fff;
+    padding: 10px 15px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown .dropdown-content a:hover {
+    background-color: #ffd700;
+}
+
+/* Logo Container (Centering) */
+.logo-container {
+    text-align: center;
+    flex: 2;
+}
+
+.logo-container h1 {
+    font-size: 2rem;
+    margin: 0;
+}
+
+/* Menu */
+.menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.menu li {
+    padding: 5px 10px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.1rem;
+}
+
+.menu a:hover {
+    text-decoration: underline;
+}
+
+        .logo {
+            font-size: 2.5rem;
+            font-family: 'Cormorant Garamond', serif;
+            color: #ffd700;
+        }
+
+        nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 1.1rem;
+            font-weight: 500;
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #ffd700;
+        }
+
+      
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            text-transform: uppercase;
+            margin: 40px 0 20px;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .explore-section {
+            padding: 50px 10%;
+            text-align: center;
+             margin-bottom: 60px; 
+        }
+
+        .explore-title {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+.short-description {
+    font-size: 1.2rem;
+    color: #555;
+    text-align: center;
+    margin: 20px 0;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.explore-discover {
+    margin-top: 30px;
+    margin-bottom: 120px;
+
+    display: flex;
+    justify-content: center;
+}
+
+.explore-discover button {
+    background-color: transparent;
+    color: #333;
+    border: 2px solid #333;
+    padding: 10px 25px;
+    font-size: 16px;
+    text-transform: uppercase;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.explore-discover button:hover {
+    background-color: #ffd700;
+    color: #222;
+}
+
+
+
+        .separator-image {
+            width: 100%;
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+            margin: 50px 0;
+        }
+
+        .separator-men {
+         background-image: url('https://via.placeholder.com/1920x1080?text=Men+Collection');
+        }
+
+           
+        .separator-women {
+         background-image: url('https://via.placeholder.com/1920x1080?text=Men+Collection');
+        }
+
+            
+        .collection-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* Same column structure as explore section */
+            gap: 40px;
+            padding: 20px 10%;
+        }
+
+        .collection-item {
+            background: #fff;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            max-width: 350px; /* Ensure consistent box size */
+            margin: 0 auto;
+        }
+
+        .collection-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .collection-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+.collection-item-details {
+    text-align: center; 
+    padding: 10px;
+    background-color: black;
+}
+
+.collection-item-details h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 5px 0;
+    color: white;
+}
+
+.collection-item-details p {
+    font-size: 0.9rem;
+    color: #f0f0f0;
+    margin: 5px 0;
+}
+
+.slideshow-container {
+    position: relative;
+    max-width: 100%;
+    margin: auto;
+}
+
+.mySlides {
+    display: none;
+}
+
+img {
+    vertical-align: middle;
+}
+
+/* Arrows */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    user-select: none;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev {
+    left: 0;
+    border-radius: 0 3px 3px 0;
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from { opacity: .4 }
+    to { opacity: 1 }
+}
+
+
+.signup-login {
+    position: relative;
+    margin-right: 20px;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.signup-login .fas {
+    color: #fff;
+    transition: color 0.3s ease;
+}
+
+.signup-login:hover .fas {
+    color: #ffd700;
+}
+
+.signup-login .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #222;
+    display: none;
+    padding: 10px 0;
+    border-radius: 0px;
+    list-style: none;
+    z-index: 1000;
+    min-width: 200px;
+}
+
+.signup-login .dropdown-menu li {
+    text-align: left;
+    padding: 10px;
+}
+
+.signup-login .dropdown-menu li a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+.signup-login .dropdown-menu li a:hover {
+    background-color: #ffd700;
+    color: #222;
+}
+
+
+.signup-login:hover .dropdown-menu {
+    display: block;
+}
+
+        footer {
+    background-color: #000;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    flex: 1;
+    margin: 10px;
+    }
+
+.footer-section h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin: 5px 0;
+}
+
+.footer-section ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.9rem;
+  
+}
+
+.footer-section ul li a:hover {
+    text-decoration: underline;
+}
+
+footer form {
+    display: flex;
+    flex-direction: column;
+}
+
+footer input {
+    padding: 10px;
+    margin-bottom: 5px;
+    border: none;
+    border-radius: 5px;
+}
+
+footer button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ffd700;
+    color: #000;
+    cursor: pointer;
+}
+
+footer button:hover {
+    background-color: #e6c200;
+}
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #333;
+    color: #fff;
+}
+
+
+header.dark-mode {
+    background-color: #222;
+}
+
+footer.dark-mode {
+    background-color: #222;
+}
+
+.main-article.dark-mode {
+    background-color: #444;
+    color: #fff;
+}
+
+.article-preview.dark-mode {
+    background-color: #444;
+    color: #fff;
+}
+
+button.dark-mode {
+    background-color: #ffd700;
+    color: #000;
+}
+
+
+.theme-icon {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    position: relative;
+    left: 10px;
+}
+
+
+#theme-icon {
+    color: gold; 
+    font-size: 1.6rem; 
+}
+
+
+body.dark-mode #theme-icon {
+    color: #fff; 
+}
+
+body.dark-mode .short-description {
+    color: white;
+}
+
+
+body.dark-mode .explore-discover button {
+    background-color: #444; 
+    color: #fff; 
+    border: 2px solid #fff;
+
+body.dark-mode .explore-discover button:hover {
+    background-color: #ffd700;
+    color: #000; 
+}
+
+
+    </style>
+</head>
+<body>
+ 
+<header>
+    <div class="logo">
+        <h1>Louis Vuitton</h1>
+    </div>
+    <nav>
+<ul class="nav-links">
+            <li class="dropdown signup-login">
+                <i class="fas fa-user-circle"></i>
+                <ul class="dropdown-menu">
+                    <li><a href="signup.html">Signup</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </li>
+       
+            <li class="dropdown">
+                <a href="#">Menu</a>
+                <ul class="dropdown-menu">
+                    <li class="dropdown">
+                        <a href="women.html">Women</a>
+                                           </li>
+                    <li><a href="men.html">Men</a></li>
+                                  </ul>
+            </li>
+  <li class="dropdown">
+                <a href="#">About Us</a>
+                <ul class="dropdown-menu">
+                   <li><a href="ot.html">Our Team</a></li>
+                    <li><a href="vm.html">Vision & Mission</a></li>
+                    
+                    <li><a href="oi.html">Legacy & Impact</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+<button onclick="toggleDarkMode()" id="theme-toggle" class="theme-icon">
+    <i id="theme-icon" class="fas fa-sun"></i> </button>
+
+</header>
+    
+  
+
+<div class="slideshow-container">
+    <!-- Slideshow images -->
+    <div class="mySlides fade">
+        <img src="images/lv2.jpg" style="width:100%">
+    </div>
+    <div class="mySlides fade">
+        <img src="images/lvvv.jpg" style="width:100%">
+    </div>
+    <div class="mySlides fade">
+        <video style="width:100%" controls>
+            <source src="images/vidlv.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+
+   
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+    </section>
+
+    <section class="collections-section">
+    <h2 class="section-title">Louis Vuitton</h2>
+    <p class="short-description">
+        Explore the world of Louis Vuitton, where timeless craftsmanship meets innovative design. Dive into the brand’s Vision and Mission, learn about the visionary leaders driving its success in Our Team section, and discover how Louis Vuitton has left an indelible mark on fashion with its Legacy and Impact.
+    </p>
+    <!-- Discover More Button -->
+    <div class="explore-discover">
+        <button onclick="window.location.href='au.html'">About Us</button>
+    </div>
+</section>
+
+    <div class="separator-image separator-women"></div>
+
+<script>
+    const separatorImageWomen = document.querySelector('.separator-women');
+    let imageIndexWomen = 0;
+    const imagesWomen = [
+        'images/women.jpg',
+        'images/women2.jpg',
+        'images/women3.jpg'
+    ];
+
+    function changeImageWomen() {
+        separatorImageWomen.style.backgroundImage = `url(${imagesWomen[imageIndexWomen]})`;  // Corrected line
+        imageIndexWomen = (imageIndexWomen + 1) % imagesWomen.length;
+    }
+
+    setInterval(changeImageWomen, 5000);
+    changeImageWomen();
+</script>
+
+
+
+    <section class="collections-section">
+        <h2 class="section-title">Women's Collection</h2>
+        <div class="collection-grid">
+            <div class="collection-item">
+                <img src="images/lvw.png" alt="Winter Coat">
+
+                <div class="collection-item-details">
+                    <h3>Winter</h3>
+                    <p> 3D Pocket Technical Parka</p>
+                </div>
+            </div>
+            <div class="collection-item">
+                 <img src="images/lvw22.png" alt="Summer Dress">
+
+
+                <div class="collection-item-details">
+                    <h3>Summer</h3>
+                    <p>Monogram Flower Accent Dress</p>
+                </div>
+            </div>
+            <div class="collection-item">
+                 <img src="images/lvw3.png" alt="Winter Coat">
+
+                <div class="collection-item-details">
+                    <h3>Limited Edition</h3>
+                    <p>Noé Trunk PM</p>
+                </div>
+            </div>
+        </div>
+<!-- Discover More Button -->
+  <div class="explore-discover">
+    <button onclick="window.location.href='au.html'">Discover More</button>
+  </div>
+
+    </section>
+
+    <div class="separator-image separator-men"></div>
+   <script>
+    let imageIndex = 0;
+    const images = [
+        'images/men.jpg',  // Gambar pertama
+        'images/men2.jpeg',     // Gambar kedua
+        'images/men3.jpg'      // Gambar ketiga
+    ];
+    
+    const separatorImage = document.querySelector('.separator-men');
+
+    function changeImage() {
+        separatorImage.style.backgroundImage = `url(${images[imageIndex]})`;  
+        imageIndex = (imageIndex + 1) % images.length;  
+    }
+
+        setInterval(changeImage, 5000);
+
+        changeImage();
+</script>
+
+
+    <section class="collections-section">
+        <h2 class="section-title">Men's Collection</h2>
+        <div class="collection-grid">
+            <div class="collection-item">
+                <img src="images/lvm2.png" alt="Winter clothes">
+
+                <div class="collection-item-details">
+                    <h3>Winter</h3>
+                    <p>Shearling Trucker Jacket </p>
+                </div>
+            </div>
+
+            <div class="collection-item">
+                <img src="images/lvm.png" alt="Summer clothes">
+
+                <div class="collection-item-details">
+                    <h3>Summer</h3>
+                    <p>Damier Denim Trucker Jacket </p>
+                </div>
+            </div>
+           <div class="collection-item">
+               <img src="images/lvm3.png" alt="Limited Edition Bags">
+
+                <div class="collection-item-details">
+                    <h3>Limited Edition</h3>
+                    <p>Keepall Bandoulière 25</p>
+
+                </div>
+            </div>
+
+        </div>
+  <div class="explore-discover">
+    <button onclick="window.location.href='nextpage.html'">Discover More</button>
+  </div>
+
+    </section>
+
+    <footer>
+
+    <div class="footer-section">
+        <h3>Our Blog</h3>
+        <ul>
+            <li><a href="oi3.html">Cultural Influence</a></li>
+            <li><a href="oi1.html">Artistic Collaborations</a></li>
+            <li><a href="oi2.html">Environmental Commitment</a></li>
+          
+        </ul>
+    </div>
+    <div class="footer-section">
+        <h3>About Us</h3>
+        <ul>
+            <li><a href="ot.html">Our Team</a></li>
+            <li><a href="vm.html">Vision and Mission</a></li>
+            <li><a href="oi.html">Legacy and Impact</a></li>
+        </ul>
+    </div>
+    <div class="footer-section">
+        <h3>Follow Us</h3>
+        <ul>
+        <li><a href="https://www.instagram.com/louisvuitton/" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-instagram"></i> Instagram</a></li>
+        <li><a href="https://www.youtube.com/user/LOUISVUITTON" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-youtube"></i> YouTube</a></li>
+        <li><a href="https://x.com/louisvuitton" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-twitter"></i> Twitter</a></li>
+    </ul>
+    </div>
+    <div class="footer-section">
+        <h3>Newsletter</h3>
+        <form>
+            <input type="email" placeholder="Enter your email">
+            <button type="submit">Subscribe</button>
+        </form>
+    </div>
+
+    </footer>
+<script>
+let slideIndex = 0;
+let slideshowTimer;
+const slides = document.getElementsByClassName("mySlides");
+const video = document.querySelector("video"); 
+
+
+function showSlides() {
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) { slideIndex = 1; }
+    slides[slideIndex - 1].style.display = "block";
+    slideshowTimer = setTimeout(showSlides, 5000);
+}
+
+
+video.addEventListener("play", () => {
+    clearTimeout(slideshowTimer);
+});
+
+
+video.addEventListener("pause", () => {
+    showSlides();
+});
+
+
+showSlides();
+</script>
+<script>
+    function toggleMenu() {
+        const nav = document.getElementById('navbarNav');
+        nav.classList.toggle('show');
+    }
+</script>
+<script>
+// Function to toggle dark mode and light mode
+function toggleDarkMode() {
+    const body = document.body;
+    const icon = document.getElementById('theme-icon');
+
+    // Toggle the dark mode class
+    body.classList.toggle('dark-mode');
+
+    // Toggle between the sun and moon icons
+    if (body.classList.contains('dark-mode')) {
+        icon.classList.remove('fa-sun');
+        icon.classList.add('fa-moon');
+        localStorage.setItem('theme', 'dark');
+    } else {
+        icon.classList.remove('fa-moon');
+        icon.classList.add('fa-sun');
+        localStorage.setItem('theme', 'light');
+    }
+}
+</script>
+
+</body>
+</html>
