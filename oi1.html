@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Innovation & Craftsmanship | Louis Vuitton Blog</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Lora:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Lora', serif;
+            background-color: #f8f8f8;
+            color: #333;
+            overflow-x: hidden;
+            position: relative;
+            min-height: 100vh;
+        }
+
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #000;
+            color: #fff;
+            position: sticky;
+            padding: 20px 20px;
+            top: 0;
+            z-index: 1000;
+            height: 70px;
+            padding-right: 60px; 
+        }
+
+        .logo h1 {
+            font-family: 'Futura', sans-serif;
+            font-size: 2.5rem;
+            font-weight: bold;
+            text-align: center;
+            color: white;
+            margin: 0;
+            padding-left: 50px;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            padding-left: 20px; 
+        }
+
+        .dropdown button {
+            background-color: #000;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #000;
+            min-width: 160px;
+            z-index: 1;
+            top: 35px;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+
+.dropdown-menu.active {
+    display: block;
+     position: absolute;
+            background-color: #000;
+            top: 64px;  
+            left: 0;
+            width: 13%;  
+}
+ 
+        .dropdown-menu a {
+            display: block;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+
+        .dropdown-menu a:hover {
+            background-color: #ffd700;
+            color: #000;
+        }
+
+
+       .navbar-toggler {
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    left: 10px;
+    margin-top: -10px;
+}
+
+.navbar-toggler-icon {
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    position: relative;
+}
+
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    left: 0;
+}
+
+.navbar-toggler-icon::before {
+    top: -8px;
+}
+
+.navbar-toggler-icon::after {
+    top: 8px;
+}
+
+/* Homepage icon */
+.homepage-icon {
+    position: absolute;
+    right: 80px; }
+
+.homepage-icon .home-link {
+    color: #fff;
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+
+.homepage-icon .home-link i {
+    color: white;
+    font-size: 1.6rem;
+}
+
+.homepage-icon .home-link:hover {
+    color: #ffd700;
+}
+
+        .section-title {
+            font-size: 3rem;
+            text-align: center;
+            text-transform: uppercase;
+            margin: 40px 0 20px;
+            font-family: 'Playfair Display', serif;
+            font-weight: 1500;
+             letter-spacing: 1px;
+             margin-bottom: 60px;
+
+        }
+
+
+.read-more {
+    color: #ffd700; 
+    font-size: 1rem; 
+    font-weight: bold; 
+    transition: color 0.3s ease; 
+}
+
+.read-more:hover {
+    color: #000; 
+    text-decoration: underline; 
+}
+
+
+       
+        .container {
+            display: flex;
+            justify-content: space-between;
+            margin: 40px auto;
+            width: 80%;
+        }
+
+       
+        .main-article {
+            flex: 0 0 70%;
+            background-color: #fff;
+            padding: 40px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            margin-right: 100px;
+        }
+
+        .main-article h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+           
+        }
+
+        .main-article p {
+            font-size: 1.2rem;
+            color: #777;
+            margin-bottom: 20px;
+        }
+
+        .main-article img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+        .article-previews {
+            flex: 0 0 28%;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-right: 100px;
+
+        }
+
+        .article-preview {
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .article-preview h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .article-preview p {
+            font-size: 0.9rem;
+            color: #777;
+            margin-bottom: 10px;
+        }
+
+        .article-preview .read-more {
+            color: #ffd700;
+            font-size: 1rem;
+        }
+
+
+        footer {
+            background-color: #000;
+            color: #fff;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            clear: both;
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer-section {
+            flex: 1;
+            margin: 10px;
+        }
+
+        .footer-section h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section ul li {
+            margin: 5px 0;
+        }
+
+        .footer-section ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .footer-section ul li a:hover {
+            text-decoration: underline;
+        }
+
+        footer form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        footer input {
+            padding: 10px;
+            margin-bottom: 5px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        footer button {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #ffd700;
+            color: #000;
+            cursor: pointer;
+        }
+
+        footer button:hover {
+            background-color: #e6c200;
+        }
+
+body.dark-mode {
+    background-color: #333;
+    color: #fff;
+}
+
+
+header.dark-mode {
+    background-color: #222;
+}
+
+footer.dark-mode {
+    background-color: #222;
+}
+
+body.dark-mode   .main-article {
+    background-color: #444; 
+    color:white; 
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); 
+}
+
+body.dark-mode .vision-mission-container h2 {
+    color: #ffd700; 
+}
+
+body.dark-mode   .main-article p {
+    color: white; 
+}
+
+
+body.dark-mode  .article-preview {
+    background-color: #444; 
+    color: #fff; 
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); 
+}
+
+body.dark-mode .blog-post h3 {
+    color: #ffd700; 
+}
+
+body.dark-mode  .article-preview p {
+    color: white; 
+}
+
+
+body.dark-mode .blog-post a.learn-more {
+    border-color: #ffd700; 
+    color: #ffd700; 
+}
+
+body.dark-mode .blog-post a.learn-more:hover {
+    background-color: #ffd700; 
+    color: #222; 
+}
+
+.article-preview.dark-mode {
+    background-color: #444;
+    color: #fff;
+}
+
+button.dark-mode {
+    background-color: #ffd700;
+    color: #000;
+}
+
+
+.theme-icon {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    position: relative;
+    left: 45px;
+}
+
+
+#theme-icon {
+    color: #ffd700;
+    font-size: 1.6rem; 
+}
+
+
+body.dark-mode #theme-icon {
+    color: #fff; 
+}
+
+
+
+    </style>
+</head>
+<body>
+
+<header>
+   <button class="navbar-toggler" id="hamburger-toggle">
+        <div class="navbar-toggler-icon"></div>
+    </button>
+  
+    <div class="dropdown-menu" id="dropdown-menu">
+        <a href="ot.html">Our Team</a>
+        <a href="vm.html">Vision and Mission </a>
+        <a href="oi.html">Legacy and Impact</a>
+    </div>
+    <div class="logo">
+        <h1>Louis Vuitton</h1>
+    </div>
+    <nav>
+           </nav>
+
+   <!-- Theme Toggle Button with Icon -->
+<button onclick="toggleDarkMode()" id="theme-toggle" class="theme-icon">
+    <i id="theme-icon" class="fas fa-sun"></i> 
+</button>
+
+   <!-- Homepage icon on the right side -->
+    <div class="homepage-icon">
+        <a href="index.html" class="home-link">
+         <i class="fas fa-home"></i>
+        </a>
+    </div>
+</header>
+
+
+<!-- Dropdown menu positioned below navbar -->
+<ul class="navbar-nav" id="navbarNav">
+    <li class="nav-item dropdown">
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="ot.html">Our Team</a>
+            <a class="dropdown-item" href="vm.html">Vision and Mission</a>
+            <a class="dropdown-item" href="oi.html">Legacy and Impact</a>
+        </div>
+    </li>
+</ul>
+
+ <main>
+    <section class="container">
+      
+        <div class="main-article">
+            <h2>The Enduring Allure of Louis Vuitton x Takashi Murakami Handbags</h2>
+            <p>The original fashion collab turns 20 with an exciting re-edition.</p>
+            
+            <img src="images/oi1.png" alt="Craftsmanship Image">
+            <p>You couldn't escape Louis Vuitton's multicolored logo in the aughts. Paris, Jessica, and Nicole—the decades’ most emblematic mononyms—all wore the brand's colorful Speedy and Pochette handbags like arm candy in widely circulated paparazzi shots.</p>
+<p>It started with a fashion collab. In 2003, designer Marc Jacobs—who was then creative director at Louis Vuitton—tapped artist Takashi Murakami to apply his technicolor vision to the brand's iconic LV logo, birthing the concept for the modern-day designer collaboration and launching a pop culture phenomenon that’s endured for the last 20 years. “The collab definitely had a lot of staying power,” says Elizabeth Layne, chief marketing officer at Rebag, a secondhand luxury platform. “It set the benchmark of blending high-end luxury fashion with contemporary art. Working alongside Jacobs, Takashi Murakami, a Japanese artist known for his pop art aesthetic and blurring the concepts of high and low culture, reimagined the centuries-old Louis Vuitton logo for the first time in the brand’s history, remaking it for the new millennium with vibrant hues that mirrored the techno-futuristic and hyper-femme aesthetics of the Y2K era.
+</p>
+<p>Now, Louis Vuitton is reviving the legend for Gen Z with a 20th-anniversary collection. With more than 200 new items, the two-part drop—the first of which will be released on January 1—includes motifs from the original “Monogram Multicolore” and “Cherry Blossom” collections, adorning everything from iconic Louis Vuitton handbags, including the Coussin and the Speedy, to belts, wallets, wedge espadrilles, and rolling trunks. The brand's effort to bring back the collaboration is proof of its enduring allure and commercial prowess—even 20 years later. It only took a single photo of Zendaya carrying a handbag from the re-edition lineup to send the Internet into a frenzy earlier this month. “The project acts as a modern-day showcase for an enduring creative bond, defined by artistic vision, remarkable feats of traditional craftsmanship and cutting-edge technology, and the timeless appeal of this seminal moment in early 21st-century pop and collector culture,” reads a press release from Louis Vuitton. But this is more than just an anniversary celebration. After years of the Y2K era's greatest hits—from low-rise jeans and cargo pants to corsets and pirate-like skirts—making a comeback, it was only a matter of time before Louis Vuitton reimagined its most successful Y2K collaboration for Gen Z. “We continually have demand for all LV collaborations, but I would say the Murakami ones tend to have high sell-through rates and just move quicker,” says Layne. With the re-release, she predicts that demand for the original Louis Vuitton x Takashi Murakami handbags will increase even more.</p>
+
+
+        </div>
+
+     
+        <div class="article-previews">
+            <div class="article-preview">
+                <img src="images/oi2.png" alt="article 1" style="width: 100%; height: 30%;">
+
+                <h3>Environmental Commitment</h3>
+                <p>Last month, Louis Vuitton took part in the LIFE 360 Summit (LVMH Initiatives For The Environment) organized at UNESCO by Antoine Arnault (LVMH Image & Environment) and Hélène Valade (LVMH Environment), in the presence of Bernard Arnault (LVMH Chairman and CEO), Christophe Béchu (French Minister for Ecological Transition and Cohesion of the Territories),...</p>
+                <a href="oi2.html" class="read-more">Read More</a>
+            </div>
+
+            <div class="article-preview">
+                 <img src="images/oi3.png" alt="article 2" style="width: 100%; height: 30%;">
+
+                <h3>Cultural Influence</h3>
+                <p>On the outskirts of Paris, in an undisclosed location, sits a building that puts the most opulent closet to shame. Inside, it houses some 50,000 Louis Vuitton archival items, plus another 200,000 pieces of documents and ephemera. There are hand-beaded gowns; the lace angel wings worn by models in Virgil Abloh’s posthumous fall-winter 2022 show; sunglasses labeled like insect specimens;...</p>
+                <a href="oi3.html" class="read-more">Read More</a>
+            </div>
+        </div>
+    </section>
+</main>
+
+ <footer>
+
+    <div class="footer-section">
+        <h3>Our Blog</h3>
+        <ul>
+            <li><a href="oi3.html">Cultural Influence</a></li>
+            <li><a href="oi1.html">Artistic Collaborations</a></li>
+            <li><a href="oi2.html">Environmental Commitment</a></li>
+          
+        </ul>
+    </div>
+    <div class="footer-section">
+        <h3>About Us</h3>
+        <ul>
+            <li><a href="ot.html">Our Team</a></li>
+            <li><a href="vm.html">Vision and Mission</a></li>
+            <li><a href="oi.html">Legacy and Impact</a></li>
+        </ul>
+    </div>
+    <div class="footer-section">
+        <h3>Follow Us</h3>
+        <ul>
+        <li><a href="https://www.instagram.com/louisvuitton/" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-instagram"></i> Instagram</a></li>
+        <li><a href="https://www.youtube.com/user/LOUISVUITTON" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-youtube"></i> YouTube</a></li>
+        <li><a href="https://x.com/louisvuitton" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-twitter"></i> Twitter</a></li>
+    </ul>
+    </div>
+    <div class="footer-section">
+        <h3>Newsletter</h3>
+        <form>
+            <input type="email" placeholder="Enter your email">
+            <button type="submit">Subscribe</button>
+        </form>
+    </div>
+
+    </footer>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+<script>
+
+function toggleDarkMode() {
+    const body = document.body;
+    const icon = document.getElementById('theme-icon');
+
+ 
+    body.classList.toggle('dark-mode');
+
+
+    if (body.classList.contains('dark-mode')) {
+        icon.classList.remove('fa-sun');
+        icon.classList.add('fa-moon');
+        localStorage.setItem('theme', 'dark');
+    } else {
+        icon.classList.remove('fa-moon');
+        icon.classList.add('fa-sun');
+        localStorage.setItem('theme', 'light');
+    }
+}
+</script>
+
+<script>
+    // Toggle dropdown visibility on hamburger click
+    document.getElementById('hamburger-toggle').addEventListener('click', function() {
+        const dropdownMenu = document.getElementById('dropdown-menu');
+        dropdownMenu.classList.toggle('active');
+    });
+</script>
+</body>
+</html>
+

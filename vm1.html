@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Innovation & Craftsmanship | Louis Vuitton Blog</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Lora:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Lora', serif;
+            background-color: #f8f8f8;
+            color: #333;
+            overflow-x: hidden;
+            position: relative;
+            min-height: 100vh;
+        }
+        
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #000;
+            color: #fff;
+            position: sticky;
+            padding: 20px 20px;
+            top: 0;
+            z-index: 1000;
+            height: 70px;
+            padding-right: 60px; 
+        }
+
+        .logo h1 {
+            font-family: 'Futura', sans-serif;
+            font-size: 2.5rem;
+            font-weight: bold;
+            text-align: center;
+            color: white;
+            margin: 0;
+            padding-left: 50px;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            padding-left: 20px; 
+        }
+
+        .dropdown button {
+            background-color: #000;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #000;
+            min-width: 160px;
+            z-index: 1;
+            top: 35px;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+
+.dropdown-menu.active {
+    display: block;  
+     position: absolute;
+            background-color: #000;
+            top: 64px;  
+            left: 0;
+            width: 13%;  
+}
+
+        .dropdown-menu a {
+            display: block;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+
+        .dropdown-menu a:hover {
+            background-color: #ffd700;
+            color: #000;
+        }
+
+
+       .navbar-toggler {
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    left: 10px;
+    margin-top: -10px;
+}
+
+.navbar-toggler-icon {
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    position: relative;
+}
+
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    left: 0;
+}
+
+.navbar-toggler-icon::before {
+    top: -8px;
+}
+
+.navbar-toggler-icon::after {
+    top: 8px;
+}
+
+/* Homepage icon */
+.homepage-icon {
+    position: absolute;
+    right: 80px; 
+}
+
+.homepage-icon .home-link {
+    color: #fff;
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+
+.homepage-icon .home-link i {
+    color: white;
+    font-size: 1.6rem;
+}
+
+.homepage-icon .home-link:hover {
+    color: #ffd700;
+}
+
+        .section-title {
+            font-size: 3rem;
+            text-align: center;
+            text-transform: uppercase;
+            margin: 40px 0 20px;
+            font-family: 'Playfair Display', serif;
+            font-weight: 1500;
+             letter-spacing: 1px;
+        }
+
+
+
+        /* Blog Layout Styling */
+        .blog-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px auto;
+            width: 85%;
+        }
+
+        .blog-title {
+            font-size: 3rem;
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: #222;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .blog-content {
+            background-color: #fff;
+            padding: 40px;
+            width: 100%;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            margin-bottom: 40px;
+            text-align: left;
+            line-height: 1.8;
+        }
+
+        .blog-content h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .blog-content p {
+            font-size: 1.2rem;
+            color: #777;
+            margin-bottom: 20px;
+        }
+
+        .blog-content img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        footer {
+            background-color: #000;
+            color: #fff;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            clear: both;
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer-section {
+            flex: 1;
+            margin: 10px;
+        }
+
+        .footer-section h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section ul li {
+            margin: 5px 0;
+        }
+
+        .footer-section ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .footer-section ul li a:hover {
+            text-decoration: underline;
+        }
+
+        footer form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        footer input {
+            padding: 10px;
+            margin-bottom: 5px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        footer button {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #ffd700;
+            color: #000;
+            cursor: pointer;
+        }
+
+        footer button:hover {
+            background-color: #e6c200;
+        }
+
+body.dark-mode {
+    background-color: #333;
+    color: #fff;
+}
+
+header.dark-mode {
+    background-color: #222;
+}
+
+footer.dark-mode {
+    background-color: #222;
+}
+
+
+body.dark-mode .vision-mission-container {
+    background-color: #444; 
+    color: #fff;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+body.dark-mode .vision-mission-container h2 {
+    color: #ffd700; 
+}
+
+body.dark-mode .vision-mission-container p {
+    color: white;
+}
+
+
+body.dark-mode .blog-post {
+    background-color: #444; 
+    color: #fff;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+body.dark-mode .blog-post h3 {
+    color: #ffd700; 
+}
+
+body.dark-mode .blog-post p {
+    color: white; 
+}
+
+
+body.dark-mode .blog-post a.learn-more {
+    border-color: #ffd700;
+    color: #ffd700; 
+}
+
+body.dark-mode .blog-post a.learn-more:hover {
+    background-color: #ffd700;
+    color: #222; 
+}
+
+.article-preview.dark-mode {
+    background-color: #444;
+    color: #fff;
+}
+
+button.dark-mode {
+    background-color: #ffd700;
+    color: #000;
+}
+
+
+.theme-icon {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    position: relative;
+    left: 45px;
+}
+
+
+#theme-icon {
+    color: #ffd700; 
+    font-size: 1.6rem; 
+}
+
+
+body.dark-mode #theme-icon {
+    color: #fff; 
+}
+
+body.dark-mode .blog-container {
+    background-color: #222; 
+    color: #fff; 
+}
+
+body.dark-mode .blog-content {
+    background-color: #333; 
+    color: #fff; 
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .blog-content h2 {
+    color: #ffd700; 
+}
+
+body.dark-mode .blog-content p {
+    color:white; 
+}
+
+
+    </style>
+</head>
+<body>
+
+<header>
+
+  
+   <button class="navbar-toggler" id="hamburger-toggle">
+        <div class="navbar-toggler-icon"></div>
+    </button>
+
+    <div class="dropdown-menu" id="dropdown-menu">
+        <a href="ot.html">Our Team</a>
+        <a href="vm.html">Vision and Mission </a>
+        <a href="oi.html">Legacy and Impact</a>
+    </div>
+    <div class="logo">
+        <h1>Louis Vuitton</h1>
+    </div>
+    <nav>
+           </nav>
+
+
+<button onclick="toggleDarkMode()" id="theme-toggle" class="theme-icon">
+    <i id="theme-icon" class="fas fa-sun"></i> 
+</button>
+
+
+    <div class="homepage-icon">
+        <a href="index.html" class="home-link">
+         <i class="fas fa-home"></i>
+        </a>
+    </div>
+</header>
+
+
+
+<ul class="navbar-nav" id="navbarNav">
+    <li class="nav-item dropdown">
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="ot.html">Our Team</a>
+            <a class="dropdown-item" href="vm.html">Vision and Mission</a>
+            <a class="dropdown-item" href="oi.html">Legacy and Impact</a>
+        </div>
+    </li>
+</ul>
+
+<main>
+    <section class="blog-container">
+        <h2 class="section-title">Innovation and Craftsmanship</h2>
+        <div class="blog-content">
+            <h2>The Art of Crafting Timeless Pieces</h2>
+            <p>Louis Vuitton continuously pushes the boundaries of design, creating products that blend cutting-edge innovation with timeless luxury. The brand incorporates modern technology, such as 3D printing and advanced materials, into its design process, allowing them to create items that are not only aesthetically pleasing but also functional and durable. The brand also places a strong emphasis on sustainability, using eco-friendly materials and adopting green manufacturing processes to minimize environmental impact. This commitment to innovation ensures that Louis Vuitton stays at the forefront of the fashion industry while remaining true to its heritage.</p>
+           <img src="images/vm1.jpg" alt="Craftsmanship Image" style="width: 1400px; height: 900px;">
+
+            <p>Craftsmanship is the backbone of Louis Vuitton’s identity. Each product is handcrafted by highly skilled artisans who follow centuries-old techniques passed down through generations. From the cutting and stitching of luxurious leather to the meticulous attention to detail in every piece, Louis Vuitton ensures that every item meets the highest standards of quality. Their iconic Monogram canvas, along with other premium materials, undergoes a detailed process that guarantees durability, elegance, and longevity. The brand's commitment to craftsmanship ensures that every Louis Vuitton piece is not just a product, but a work of art, designed to last for generations.</p>
+        </div>
+    </section>
+</main>
+
+ <footer>
+
+    <div class="footer-section">
+        <h3>Our Blog</h3>
+        <ul>
+            <li><a href="oi3.html">Cultural Influence</a></li>
+            <li><a href="oi1.html">Artistic Collaborations</a></li>
+            <li><a href="oi2.html">Environmental Commitment</a></li>
+          
+        </ul>
+    </div>
+    <div class="footer-section">
+        <h3>About Us</h3>
+        <ul>
+            <li><a href="ot.html">Our Team</a></li>
+            <li><a href="vm.html">Vision and Mission</a></li>
+            <li><a href="oi.html">Legacy and Impact</a></li>
+        </ul>
+    </div>
+    <div class="footer-section">
+        <h3>Follow Us</h3>
+        <ul>
+        <li><a href="https://www.instagram.com/louisvuitton/" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-instagram"></i> Instagram</a></li>
+        <li><a href="https://www.youtube.com/user/LOUISVUITTON" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-youtube"></i> YouTube</a></li>
+        <li><a href="https://x.com/louisvuitton" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-twitter"></i> Twitter</a></li>
+    </ul>
+    </div>
+    <div class="footer-section">
+        <h3>Newsletter</h3>
+        <form>
+            <input type="email" placeholder="Enter your email">
+            <button type="submit">Subscribe</button>
+        </form>
+    </div>
+
+    </footer>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+    function toggleMenu() {
+        document.getElementById('navbarNav').classList.toggle('show');
+    }
+</script>
+<script>
+// Function to toggle dark mode and light mode
+function toggleDarkMode() {
+    const body = document.body;
+    const icon = document.getElementById('theme-icon');
+
+    body.classList.toggle('dark-mode');
+
+    if (body.classList.contains('dark-mode')) {
+        icon.classList.remove('fa-sun');
+        icon.classList.add('fa-moon');
+        localStorage.setItem('theme', 'dark');
+    } else {
+        icon.classList.remove('fa-moon');
+        icon.classList.add('fa-sun');
+        localStorage.setItem('theme', 'light');
+    }
+}
+</script>
+
+<script>
+
+    document.getElementById('hamburger-toggle').addEventListener('click', function() {
+        const dropdownMenu = document.getElementById('dropdown-menu');
+        dropdownMenu.classList.toggle('active');
+    });
+</script>
+
+</body>
+</html>

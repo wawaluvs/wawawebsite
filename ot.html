@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Team | Louis Vuitton Blog</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Lora:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Lora', serif;
+            background-color:  #f4f4f4;
+            color: #333;
+            overflow-x: hidden;
+            position: relative;
+            min-height: 100vh;
+        }
+        
+        
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #000;
+            color: #fff;
+            position: sticky;
+            padding: 20px 20px;
+            top: 0;
+            z-index: 1000;
+            height: 70px;
+            padding-right: 60px; 
+        }
+
+        .logo h1 {
+            font-family: 'Futura', sans-serif;
+            font-size: 2.5rem;
+            font-weight: bold;
+            text-align: center;
+            color: white;
+            margin: 0;
+            padding-left: 50px;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            padding-left: 20px; 
+        }
+
+        .dropdown button {
+            background-color: #000;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #000;
+            min-width: 160px;
+            z-index: 1;
+            top: 35px;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+
+.dropdown-menu.active {
+    display: block;  
+     position: absolute;
+            background-color: #000;
+            top: 64px;  
+            left: 0;
+            width: 13%;  
+}
+
+        .dropdown-menu a {
+            display: block;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+
+        .dropdown-menu a:hover {
+            background-color: #ffd700;
+            color: #000;
+        }
+
+
+       .navbar-toggler {
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    left: 10px;
+    margin-top: -10px;
+}
+
+.navbar-toggler-icon {
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    position: relative;
+}
+
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    left: 0;
+}
+
+.navbar-toggler-icon::before {
+    top: -8px;
+}
+
+.navbar-toggler-icon::after {
+    top: 8px;
+}
+
+
+.homepage-icon {
+    position: absolute;
+    right: 80px; 
+}
+
+.homepage-icon .home-link {
+    color: #fff;
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+
+.homepage-icon .home-link i {
+    color: white;
+    font-size: 1.6rem;
+}
+
+.homepage-icon .home-link:hover {
+    color: #ffd700;
+}
+
+        .section-title {
+            font-size: 3rem;
+            text-align: center;
+            text-transform: uppercase;
+            margin: 40px 0 20px;
+            font-family: 'Playfair Display', serif;
+            font-weight: 1500;
+             letter-spacing: 1px;
+        }
+
+
+       
+        .hero-section {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+     padding-top: 50px; 
+}
+
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    color: #fff;
+}
+.mute-toggle {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    z-index: 2;
+}
+
+.mute-toggle:hover {
+    background-color: rgba(255, 255, 255, 0.7);
+    color: #000;
+}
+
+
+        .hero-section h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            text-transform: uppercase;
+            font-weight: bold;
+            color: #ffd700;
+             margin: 0;
+            margin-bottom: 180px;
+
+        }
+
+        .hero-section p {
+            font-size: 1.5rem;
+            color: #fff;
+            margin-top: 20px;
+        }
+
+        .organization-chart {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        margin-top: 80px;
+    }
+
+    .chart-level {
+        display: flex;
+        justify-content: center;
+        gap: 100px;
+        margin-bottom: 30px;
+    }
+
+    .chart-member {
+        background-color: #444;
+        padding: 50px;
+        text-align: center;
+         border: 3px solid gold; 
+        border-radius: 0px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        width: 300px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+.chart-member:hover {
+    background-color: #f0f0f0;
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+    .chart-member img {
+        width: 100%;
+        border-radius: 10%;
+        margin-bottom: 15px;
+        height: 200px;
+        object-fit: cover;
+    }
+
+    .chart-member h4 {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: white;
+        margin: 10px 0;
+    }
+
+    .chart-member p {
+        font-size: 1rem;
+        color: white;
+    }
+
+    .chart-member:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+.chart-member:hover h4,
+.chart-member:hover p {
+    color: black; 
+}
+
+        footer {
+            background-color: #000;
+            color: #fff;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            clear: both;
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer-section {
+            flex: 1;
+            margin: 10px;
+        }
+
+        .footer-section h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section ul li {
+            margin: 5px 0;
+        }
+
+        .footer-section ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .footer-section ul li a:hover {
+            text-decoration: underline;
+        }
+
+        footer form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        footer input {
+            padding: 10px;
+            margin-bottom: 5px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        footer button {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #ffd700;
+            color: #000;
+            cursor: pointer;
+        }
+
+        footer button:hover {
+            background-color: #e6c200;
+        }
+
+body.dark-mode {
+    background-color: #333;
+    color: #fff;
+}
+
+
+header.dark-mode {
+    background-color: #222;
+}
+
+footer.dark-mode {
+    background-color: #222;
+}
+
+.chart-member.dark-mode {
+    background-color: #444;
+    color: #fff;
+}
+
+ .organization-chart.dark-mode {
+    background-color: #444;
+    color: #fff;
+}
+
+button.dark-mode {
+    background-color: #ffd700;
+    color: #000;
+}
+
+
+.theme-icon {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    position: relative;
+    left: 45px;
+}
+
+
+#theme-icon {
+    color: #ffd700; 
+    font-size: 1.6rem; 
+}
+
+body.dark-mode #theme-icon {
+    color: #fff;
+}
+
+
+    </style>
+</head>
+<body>
+
+<header>
+
+  
+   <button class="navbar-toggler" id="hamburger-toggle">
+        <div class="navbar-toggler-icon"></div>
+    </button>
+    <!-- Dropdown Menu triggered by Hamburger -->
+    <div class="dropdown-menu" id="dropdown-menu">
+        <a href="ot.html">Our Team</a>
+        <a href="vm.html">Vision and Mission </a>
+        <a href="oi.html">Legacy and Impact</a>
+    </div>
+    <div class="logo">
+        <h1>Louis Vuitton</h1>
+    </div>
+    <nav>
+           </nav>
+
+<button onclick="toggleDarkMode()" id="theme-toggle" class="theme-icon">
+    <i id="theme-icon" class="fas fa-sun"></i>
+</button>
+
+ 
+    <div class="homepage-icon">
+        <a href="index.html" class="home-link">
+         <i class="fas fa-home"></i> 
+        </a>
+    </div>
+</header>
+
+
+
+<ul class="navbar-nav" id="navbarNav">
+    <li class="nav-item dropdown">
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="ot.html">Our Team</a>
+            <a class="dropdown-item" href="vm.html">Vision and Mission</a>
+            <a class="dropdown-item" href="oi.html">Legacy and Impact</a>
+        </div>
+    </li>
+</ul>
+
+<main>
+    
+    <section class="hero-section">
+ <video id="heroVideo" autoplay muted controls loop class="hero-video">
+    <source src="images/vidot.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+
+        <div>
+            <h1>Meet Our Team</h1>
+                        <button class="mute-toggle" id="muteToggle">Unmute</button>
+        </div>
+    </section>
+
+   <!-- Our Team Section -->
+<section class="team-section">
+    <h2 class="section-title">Our Team</h2>
+
+    <!-- Organization Chart -->
+    <div class="organization-chart">
+        <div class="chart-level">
+            <!-- CEO -->
+            <div class="chart-member">
+                <img src="images/wawa.png" alt="CEO">
+                <h4>SITI NURALWANI</h4>
+                <p>CEO & Founder</p>
+            </div>
+        </div>
+
+        <div class="chart-level">
+            <!-- Leadership roles under CEO -->
+            <div class="chart-member">
+                <img src="images/jiha.png" alt="Head of Design">
+                <h4>NAJIHA</h4>
+                <p>Head of Design</p>
+            </div>
+            <div class="chart-member">
+                <img src="images/wani.png" alt="Creative Director">
+                <h4>SHAHIWANI</h4>
+                <p>Creative Director</p>
+            </div>
+        </div>
+
+        <div class="chart-level">
+            <!-- Other roles -->
+            <div class="chart-member">
+                <img src="images/ainul.png" alt="Head of Marketing">
+                <h4>AINUL ALIAH</h4>
+                <p>Head of Marketing</p>
+            </div>
+            <div class="chart-member">
+                <img src="images/liza.png" alt="Head of Operations">
+                <h4>LIZA SHAFIKA</h4>
+                <p>Head of Operations</p>
+            </div>
+        </div>
+    </div>
+</section>
+</main>
+
+ <footer>
+
+    <div class="footer-section">
+        <h3>Our Blog</h3>
+        <ul>
+            <li><a href="oi3.html">Cultural Influence</a></li>
+            <li><a href="oi1.html">Artistic Collaborations</a></li>
+            <li><a href="oi2.html">Environmental Commitment</a></li>
+          
+        </ul>
+    </div>
+    <div class="footer-section">
+        <h3>About Us</h3>
+        <ul>
+            <li><a href="ot.html">Our Team</a></li>
+            <li><a href="vm.html">Vision and Mission</a></li>
+            <li><a href="oi.html">Legacy and Impact</a></li>
+        </ul>
+    </div>
+    <div class="footer-section">
+        <h3>Follow Us</h3>
+        <ul>
+        <li><a href="https://www.instagram.com/louisvuitton/" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-instagram"></i> Instagram</a></li>
+        <li><a href="https://www.youtube.com/user/LOUISVUITTON" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-youtube"></i> YouTube</a></li>
+        <li><a href="https://x.com/louisvuitton" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-twitter"></i> Twitter</a></li>
+    </ul>
+    </div>
+    <div class="footer-section">
+        <h3>Newsletter</h3>
+        <form>
+            <input type="email" placeholder="Enter your email">
+            <button type="submit">Subscribe</button>
+        </form>
+    </div>
+
+    </footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+    function toggleMenu() {
+        document.getElementById('navbarNav').classList.toggle('show');
+    }
+</script>
+<script>
+
+function toggleDarkMode() {
+    const body = document.body;
+    const icon = document.getElementById('theme-icon');
+
+      body.classList.toggle('dark-mode');
+
+
+    if (body.classList.contains('dark-mode')) {
+        icon.classList.remove('fa-sun');
+        icon.classList.add('fa-moon');
+        localStorage.setItem('theme', 'dark');
+    } else {
+        icon.classList.remove('fa-moon');
+        icon.classList.add('fa-sun');
+        localStorage.setItem('theme', 'light');
+    }
+}
+</script>
+
+<script>
+       document.getElementById('hamburger-toggle').addEventListener('click', function() {
+        const dropdownMenu = document.getElementById('dropdown-menu');
+        dropdownMenu.classList.toggle('active');
+    });
+</script>
+<script>
+
+document.getElementById("muteToggle").addEventListener("click", function () {
+    const video = document.getElementById("heroVideo");
+    if (video.muted) {
+        video.muted = false;
+        this.textContent = "Mute";
+    } else {
+        video.muted = true;
+        this.textContent = "Unmute";
+    }
+});
+</script>
+</body>
+</html>

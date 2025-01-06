@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Innovation & Craftsmanship | Louis Vuitton Blog</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Lora:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Lora', serif;
+            background-color: #f8f8f8;
+            color: #333;
+            overflow-x: hidden;
+            position: relative;
+            min-height: 100vh;
+        }
+
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #000;
+            color: #fff;
+            position: sticky;
+            padding: 20px 20px;
+            top: 0;
+            z-index: 1000;
+            height: 70px;
+            padding-right: 60px; 
+        }
+
+        .logo h1 {
+            font-family: 'Futura', sans-serif;
+            font-size: 2.5rem;
+            font-weight: bold;
+            text-align: center;
+            color: white;
+            margin: 0;
+            padding-left: 50px;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            padding-left: 20px; 
+        }
+
+        .dropdown button {
+            background-color: #000;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #000;
+            min-width: 160px;
+            z-index: 1;
+            top: 35px;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+
+.dropdown-menu.active {
+    display: block;  /* Make the dropdown visible */
+     position: absolute;
+            background-color: #000;
+            top: 64px;  
+            left: 0;
+            width: 13%;  
+}
+ 
+        .dropdown-menu a {
+            display: block;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+
+        .dropdown-menu a:hover {
+            background-color: #ffd700;
+            color: #000;
+        }
+
+
+       .navbar-toggler {
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    left: 10px;
+    margin-top: -10px;
+}
+
+.navbar-toggler-icon {
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    position: relative;
+}
+
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    left: 0;
+}
+
+.navbar-toggler-icon::before {
+    top: -8px;
+}
+
+.navbar-toggler-icon::after {
+    top: 8px;
+}
+
+
+.homepage-icon {
+    position: absolute;
+    right: 80px; 
+}
+
+.homepage-icon .home-link {
+    color: #fff;
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+
+.homepage-icon .home-link i {
+    color: white;
+    font-size: 1.6rem;
+}
+
+.homepage-icon .home-link:hover {
+    color: #ffd700;
+}
+
+        .section-title {
+            font-size: 3rem;
+            text-align: center;
+            text-transform: uppercase;
+            margin: 40px 0 20px;
+            font-family: 'Playfair Display', serif;
+            font-weight: 1500;
+             letter-spacing: 1px;
+             margin-bottom: 60px;
+
+        }
+
+
+.read-more {
+    color: #ffd700;
+    font-size: 1rem;
+    font-weight: bold; 
+    transition: color 0.3s ease; 
+}
+
+.read-more:hover {
+    color: #000; 
+    text-decoration: underline; 
+}
+
+
+       
+        .container {
+            display: flex;
+            justify-content: space-between;
+            margin: 40px auto;
+            width: 80%;
+        }
+
+   
+        .main-article {
+            flex: 0 0 70%;
+            background-color: #fff;
+            padding: 40px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            margin-right: 100px;
+        }
+
+        .main-article h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+           
+        }
+
+        .main-article p {
+            font-size: 1.2rem;
+            color: #777;
+            margin-bottom: 20px;
+        }
+
+        .main-article img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+
+        .article-previews {
+            flex: 0 0 28%;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-right: 100px;
+
+        }
+
+        .article-preview {
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .article-preview h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .article-preview p {
+            font-size: 0.9rem;
+            color: #777;
+            margin-bottom: 10px;
+        }
+
+        .article-preview .read-more {
+            color: #ffd700;
+            font-size: 1rem;
+        }
+
+
+        footer {
+            background-color: #000;
+            color: #fff;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            clear: both;
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer-section {
+            flex: 1;
+            margin: 10px;
+        }
+
+        .footer-section h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section ul li {
+            margin: 5px 0;
+        }
+
+        .footer-section ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .footer-section ul li a:hover {
+            text-decoration: underline;
+        }
+
+        footer form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        footer input {
+            padding: 10px;
+            margin-bottom: 5px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        footer button {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #ffd700;
+            color: #000;
+            cursor: pointer;
+        }
+
+        footer button:hover {
+            background-color: #e6c200;
+        }
+
+body.dark-mode {
+    background-color: #333;
+    color: #fff;
+}
+
+
+header.dark-mode {
+    background-color: #222;
+}
+
+footer.dark-mode {
+    background-color: #222;
+}
+
+
+body.dark-mode   .main-article {
+    background-color: #444; 
+    color:white;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); 
+}
+
+body.dark-mode .vision-mission-container h2 {
+    color: #ffd700;}
+
+body.dark-mode   .main-article p {
+    color: white; 
+}
+
+
+body.dark-mode  .article-preview {
+    background-color: #444;
+    color: #fff; 
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); 
+}
+
+body.dark-mode .blog-post h3 {
+    color: #ffd700; 
+}
+
+body.dark-mode  .article-preview p {
+    color: white; 
+}
+body.dark-mode .blog-post a.learn-more {
+    border-color: #ffd700; 
+    color: #ffd700; 
+}
+
+body.dark-mode .blog-post a.learn-more:hover {
+    background-color: #ffd700; 
+    color: #222; 
+}
+
+.article-preview.dark-mode {
+    background-color: #444;
+    color: #fff;
+}
+
+button.dark-mode {
+    background-color: #ffd700;
+    color: #000;
+}
+
+
+.theme-icon {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    position: relative;
+    left: 45px;
+}
+#theme-icon {
+    color: #ffd700; 
+    font-size: 1.6rem; 
+}
+
+
+body.dark-mode #theme-icon {
+    color: #fff; 
+}
+
+
+
+
+.video-modal {
+    display: none;
+    position: fixed;
+    z-index: 1001;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.video-modal-content {
+    position: relative;
+    margin: 10% auto;
+    width: 80%;
+    max-width: 600px;
+    background-color: #000;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+.video-modal-content video {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.video-close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+    color: black;
+    cursor: pointer;
+}
+.video-caption {
+    text-align: center;
+    font-size: 14px;
+    color: #fff; /* White text */
+    margin-top: 10px;
+}
+
+</style>
+</head>
+<body>
+
+<header>
+
+
+   <button class="navbar-toggler" id="hamburger-toggle">
+        <div class="navbar-toggler-icon"></div>
+    </button>
+    
+    <div class="dropdown-menu" id="dropdown-menu">
+        <a href="ot.html">Our Team</a>
+        <a href="vm.html">Vision and Mission </a>
+        <a href="oi.html">Legacy and Impact</a>
+    </div>
+    <div class="logo">
+        <h1>Louis Vuitton</h1>
+    </div>
+    <nav>
+           </nav>
+
+
+<button onclick="toggleDarkMode()" id="theme-toggle" class="theme-icon">
+    <i id="theme-icon" class="fas fa-sun"></i> 
+</button>
+
+  
+    <div class="homepage-icon">
+        <a href="index.html" class="home-link">
+         <i class="fas fa-home"></i> 
+        </a>
+    </div>
+</header>
+
+
+<ul class="navbar-nav" id="navbarNav">
+    <li class="nav-item dropdown">
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="ot.html">Our Team</a>
+            <a class="dropdown-item" href="vm.html">Vision and Mission</a>
+            <a class="dropdown-item" href="oi.html">Legacy and Impact</a>
+        </div>
+    </li>
+</ul>
+
+ <main>
+    <section class="container">
+     
+        <div class="main-article">
+            <h2>The Maison’s enduring commitment to environmental performance through energy independence and carbon footprint reduction</h2>
+            <p>Last month, Louis Vuitton took part in the LIFE 360 Summit (LVMH Initiatives For The Environment) organized at UNESCO by Antoine Arnault (LVMH Image & Environment) and Hélène Valade (LVMH Environment), in the presence of Bernard Arnault (LVMH Chairman and CEO), Christophe Béchu (French Minister for Ecological Transition and Cohesion of the Territories), Virginijus Sinkevičius (European Commissioner for the Environment, Oceans and Fisheries), and numerous presidents of the Group's Maisons. It was an opportunity for Louis Vuitton to reaffirm its contribution to the fight against climate change, with a particular focus on responsible sourcing, decarbonized transport, and energy efficiency.</p>
+            
+            <img src="images/oi2.png" alt="Article 2">
+            <p>In 2021, Louis Vuitton received approval for its greenhouse gas emissions reduction targets from the Science Based Targets (SBTi) initiative. Our commitment, aligned with projections that limit global warming to 1.5°C maximum, aims for a 55% carbon footprint reduction by 2030 compared to 2018. In the following two years, two major milestones showcase our environmental performance, including increased energy independence through lower consumption and a greater use of renewable energies, as well as a 12% reduction in the carbon footprint* of a Louis Vuitton product in just three years. These advances, reinforced by a particular focus on raising team awareness around climate issues and demonstrating unprecedented internal mobilization, lead to concrete achievements, which pave our way towards a 55% reduction of CO2 emissions from energy consumption by 2030.
+<p>To reinforce our contribution to the objectives defined by the 2015 Paris Climate Agreement to limit the average global warming to 1.5 °C, Louis Vuitton is committed to reducing our direct carbon footprint by -55% by 2030. This concerns both the energy consumption of our own sites as well as those generated by our supply chain and the entirety of our indirect activities such as services, transport, employee trips, waste. A trajectory for reducing our greenhouse gas emissions has been reviewed and approved by the Science Based Targets (SBTi) initiative.
+
+We take responsibility for our entire carbon footprint as defined as: worldwide, all activities, scopes 1-2-3. Based on our findings, we have identified that the main contributions of greenhouse gases come from three sources: raw materials, energy, and transport. We have chosen to focus our efforts on reducing emissions caused by our buildings and equipments and through transportation, given that these account for almost half of our total emissions. We address the emissions generated from raw materials through our responsible sourcing actions.</p>
+
+
+        </div>
+
+      
+        <div class="article-previews">
+            <div class="article-preview">
+                <img src="images/oi1.png" alt="article 1" style="width: 90%; height: 40%;">
+
+                <h3>Artistic Collaborations</h3>
+                <p>It started with a fashion collab. In 2003, designer Marc Jacobs—who was then creative director at Louis Vuitton—tapped artist Takashi Murakami to apply his technicolor vision to the brand's iconic LV logo, birthing the concept for the modern-day designer collaboration and launching...</p>
+                <a href="oi1.html" class="read-more">Read More</a>
+            </div>
+
+            <div class="article-preview">
+                 <img src="images/oi3.png" alt="article 2" style="width: 100%; height: 30%;">
+
+                <h3>Cultural Influence</h3>
+                <p>On the outskirts of Paris, in an undisclosed location, sits a building that puts the most opulent closet to shame. Inside, it houses some 50,000 Louis Vuitton archival items, plus another 200,000 pieces of documents and ephemera. There are hand-beaded gowns; the lace angel wings worn by models in Virgil Abloh’s posthumous fall-winter 2022 show; sunglasses labeled like insect specimens;...</p>
+                <a href="oi3.html" class="read-more">Read More</a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<div id="videoModal" class="video-modal">
+    <div class="video-modal-content">
+        <span class="video-close" id="closeVideo">&times;</span>
+        <video id="videoPlayer" controls autoplay muted>
+            <source src="images/vidoi.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+ <p class="video-caption">Louis Vuitton New Collaboration</p>
+    </div>
+</div>
+
+<script>
+
+function showVideo() {
+    document.getElementById('videoModal').style.display = 'block';
+    var video = document.getElementById('videoPlayer');
+    video.play();
+}
+
+document.getElementById('closeVideo').onclick = function() {
+    document.getElementById('videoModal').style.display = 'none';
+    var video = document.getElementById('videoPlayer');
+    video.pause(); // Pause video when modal is closed
+}
+</script>
+<footer>
+
+    <div class="footer-section">
+        <h3>Our Blog</h3>
+        <ul>
+            <li><a href="oi3.html">Cultural Influence</a></li>
+            <li><a href="oi1.html">Artistic Collaborations</a></li>
+            <li><a href="oi2.html">Environmental Commitment</a></li>
+          
+        </ul>
+    </div>
+    <div class="footer-section">
+        <h3>About Us</h3>
+        <ul>
+            <li><a href="ot.html">Our Team</a></li>
+            <li><a href="vm.html">Vision and Mission</a></li>
+            <li><a href="oi.html">Legacy and Impact</a></li>
+        </ul>
+    </div>
+    <div class="footer-section">
+        <h3>Follow Us</h3>
+        <ul>
+        <li><a href="https://www.instagram.com/louisvuitton/" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-instagram"></i> Instagram</a></li>
+        <li><a href="https://www.youtube.com/user/LOUISVUITTON" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-youtube"></i> YouTube</a></li>
+        <li><a href="https://x.com/louisvuitton" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-twitter"></i> Twitter</a></li>
+    </ul>
+    </div>
+    <div class="footer-section">
+        <h3>Newsletter</h3>
+        <form>
+            <input type="email" placeholder="Enter your email">
+            <button type="submit">Subscribe</button>
+        </form>
+    </div>
+
+    </footer>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+<script>
+
+function toggleDarkMode() {
+    const body = document.body;
+    const icon = document.getElementById('theme-icon');
+
+
+    body.classList.toggle('dark-mode');
+
+ 
+    if (body.classList.contains('dark-mode')) {
+        icon.classList.remove('fa-sun');
+        icon.classList.add('fa-moon');
+        localStorage.setItem('theme', 'dark');
+    } else {
+        icon.classList.remove('fa-moon');
+        icon.classList.add('fa-sun');
+        localStorage.setItem('theme', 'light');
+    }
+}
+</script>
+
+<script>
+
+    document.getElementById('hamburger-toggle').addEventListener('click', function() {
+        const dropdownMenu = document.getElementById('dropdown-menu');
+        dropdownMenu.classList.toggle('active');
+    });
+</script>
+<script>
+  
+    const modal = document.getElementById('videoModal');
+    const closeButton = document.getElementById('closeVideo');
+
+    // Function to close the video modal
+    closeButton.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    
+    setTimeout(function() {
+        modal.style.display = "block";
+    }, 3000);  // Show after 3 seconds
+</script>
+
+<script>
+
+function showVideo() {
+    document.getElementById('videoModal').style.display = 'block';
+    document.getElementById('videoPlayer').play();
+}
+
+
+document.getElementById('closeVideo').onclick = function() {
+    document.getElementById('videoModal').style.display = 'none';
+    document.getElementById('videoPlayer').pause(); 
+}
+</script>
+<script>
+
+function showVideo() {
+    document.getElementById('videoModal').style.display = 'block';
+    var video = document.getElementById('videoPlayer');
+    video.play();
+}
+
+
+document.getElementById('closeVideo').onclick = function() {
+    document.getElementById('videoModal').style.display = 'none';
+    var video = document.getElementById('videoPlayer');
+    video.pause(); 
+}
+</script>
+</body>
+</html>
