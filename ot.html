@@ -610,5 +610,18 @@ document.getElementById("muteToggle").addEventListener("click", function () {
     }
 });
 </script>
+    <script>
+    document.getElementById('heroVideo').addEventListener('click', function () {
+   if (this.requestFullscreen) {
+       this.requestFullscreen();
+   } else if (this.mozRequestFullScreen) { // Firefox
+       this.mozRequestFullScreen();
+   } else if (this.webkitRequestFullscreen) { // Chrome, Safari
+       this.webkitRequestFullscreen();
+   } else if (this.msRequestFullscreen) { // IE/Edge
+       this.msRequestFullscreen();
+   }
+});
+</script>
 </body>
 </html>
