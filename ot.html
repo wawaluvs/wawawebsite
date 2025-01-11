@@ -465,13 +465,10 @@ body.dark-mode #theme-icon {
 <main>
     
     <section class="hero-section">
-   <video id="videoElement" controls muted>
-            <source src="path/to/your/video.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <div>
-            <button class="mute-toggle" id="muteToggle">Unmute</button>
-        </div>
+<video id="heroVideo" autoplay muted controls playsinline loop class="hero-video">
+    <source src="images/vidot.mp4" type="video/mp4">
+    Your browser does not support the video tag. Please update your browser.
+</video>
         <div>
             <h1>Meet Our Team</h1>
                         <button class="mute-toggle" id="muteToggle">Unmute</button>
@@ -601,27 +598,26 @@ function toggleDarkMode() {
     });
 </script>
 <script>
-const video = document.getElementById("videoElement");
-const pipButton = document.getElementById("pipButton");
 
-// Picture-in-Picture toggle
-pipButton.addEventListener("click", () => {
-    if (document.pictureInPictureEnabled) {
-        if (video !== document.pictureInPictureElement) {
-            video.requestPictureInPicture()
-                .catch(error => {
-                    console.error("Error with PiP mode: ", error);
-                });
-        } else {
-            document.exitPictureInPicture()
-                .catch(error => {
-                    console.error("Error exiting PiP mode: ", error);
-                });
-        }
+document.getElementById("muteToggle").addEventListener("click", function () {
+    const video = document.getElementById("heroVideo");
+    if (video.muted) {
+        video.muted = false;
+        this.textContent = "Mute";
     } else {
-        alert('Picture-in-Picture is not supported in your browser');
+        video.muted = true;
+        this.textContent = "Unmute";
     }
 });
-    </script>
+</script>
+
+<script>
+const video = document.getElementById("heroVideo");
+document.getElementById("heroVideo").addEventListener("click", function () {
+    if (document.pictureInPictureEnabled && !document.pictureInPictureElement) {
+        video.requestPictureInPicture();
+    }
+});
+</script>
 </body>
 </html>
