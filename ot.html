@@ -610,14 +610,5 @@ document.getElementById("muteToggle").addEventListener("click", function () {
     }
 });
 </script>
-
-<script>
-const video = document.getElementById("heroVideo");
-document.getElementById("heroVideo").addEventListener("click", function () {
-    if (document.pictureInPictureEnabled && !document.pictureInPictureElement) {
-        video.requestPictureInPicture();
-    }
-});
-</script>
 </body>
 </html>
