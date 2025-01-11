@@ -597,7 +597,19 @@ function toggleDarkMode() {
         dropdownMenu.classList.toggle('active');
     });
 </script>
+<script>
 
+document.getElementById("muteToggle").addEventListener("click", function () {
+    const video = document.getElementById("heroVideo");
+    if (video.muted) {
+        video.muted = false;
+        this.textContent = "Mute";
+    } else {
+        video.muted = true;
+        this.textContent = "Unmute";
+    }
+});
+</script>
     <script>
     document.getElementById('heroVideo').addEventListener('click', function () {
    if (this.requestFullscreen) {
