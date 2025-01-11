@@ -465,17 +465,13 @@ body.dark-mode #theme-icon {
 <main>
     
     <section class="hero-section">
-  <video id="videoElement" controls>
-        <source src="path/to/your/video.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-    <div class="controls">
-        <button id="pipButton">Picture-in-Picture</button>
-        <button id="fullscreenButton">Fullscreen</button>
-        <button id="unmuteButton">Unmute</button>
-    </div>
-</div>
-
+   <video id="videoElement" controls muted>
+            <source src="path/to/your/video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div>
+            <button class="mute-toggle" id="muteToggle">Unmute</button>
+        </div>
         <div>
             <h1>Meet Our Team</h1>
                         <button class="mute-toggle" id="muteToggle">Unmute</button>
@@ -604,15 +600,13 @@ function toggleDarkMode() {
         dropdownMenu.classList.toggle('active');
     });
 </script>
+<script>
+const video = document.getElementById("videoElement");
+const pipButton = document.getElementById("pipButton");
 
-    <script>
-    const video = document.getElementById("videoElement");
-    const pipButton = document.getElementById("pipButton");
-    const fullscreenButton = document.getElementById("fullscreenButton");
-    const unmuteButton = document.getElementById("unmuteButton");
-
-    // Picture-in-Picture toggle
-    pipButton.addEventListener("click", () => {
+// Picture-in-Picture toggle
+pipButton.addEventListener("click", () => {
+    if (document.pictureInPictureEnabled) {
         if (video !== document.pictureInPictureElement) {
             video.requestPictureInPicture()
                 .catch(error => {
@@ -624,33 +618,10 @@ function toggleDarkMode() {
                     console.error("Error exiting PiP mode: ", error);
                 });
         }
-    });
-
-    // Fullscreen toggle
-    fullscreenButton.addEventListener("click", () => {
-        if (!document.fullscreenElement) {
-            video.requestFullscreen()
-                .catch(error => {
-                    console.error("Error with fullscreen: ", error);
-                });
-        } else {
-            document.exitFullscreen()
-                .catch(error => {
-                    console.error("Error exiting fullscreen: ", error);
-                });
-        }
-    });
-
-    // Unmute the video
-    unmuteButton.addEventListener("click", () => {
-        if (video.muted) {
-            video.muted = false;
-            unmuteButton.textContent = "Mute";
-        } else {
-            video.muted = true;
-            unmuteButton.textContent = "Unmute";
-        }
-    });
-</script>
+    } else {
+        alert('Picture-in-Picture is not supported in your browser');
+    }
+});
+    </script>
 </body>
 </html>
