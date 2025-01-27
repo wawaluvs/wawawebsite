@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="initial-scale=1.0, width=device-width">
+  <title>LV Men's Section</title>
+  <link rel="stylesheet" href="style4.css">
+  <link rel="icon" href="MyImages/menic.jpeg" type="image">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <header class="main-header">
+    <h1 style="font-family: 'Playfair Display', serif; font-size: 48px; color: white; margin: 0;">
+      Louis Vuitton <span style="color: gold; font-family: 'times new roman', Serif ; font-size: 30px;">blog</span>
+    </h1>
+    <div class="header-right">
+      <!-- Home button with custom image -->
+      <a href="indexlv.html" class="home-btn">
+        <img src="MyImages/home.png" alt="Home" class="home-icon">
+      </a>
+      
+      <!-- Mode Toggle with custom sun and moon images -->
+      <button class="mode-toggle" id="mode-toggle">
+        <img src="MyImages/sun.png" alt="Light Mode" class="sun-icon">
+        <img src="MyImages/moon.png" alt="Dark Mode" class="moon-icon">
+      </button>
+    </div>
+  </header>
+
+  <div class="carousel-container">
+    <div class="carousel">
+      <div class="carousel-item">
+        <img src="MyImages/summerr.jpeg" alt="Summer">
+        <div class="overlay-container">
+          <div class="overlay">Men Summer Edition Wear</div>
+          <a href="timeless.html" target="_blank">
+            <button class="discover-more">Discover More</button>
+          </a>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <img src="MyImages/winter.jpeg" alt="Winter">
+        <div class="overlay-container">
+          <div class="overlay">Men Winter Edition Wear</div>
+          <a href="menwinter.html" target="_blank">
+            <button class="discover-more">Discover More</button>
+          </a>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <img src="MyImages/limited.jpeg" alt="Limited Edition">
+        <div class="overlay-container">
+          <div class="overlay">Men Limited Edition Wear</div>
+          <a href="menlimited.html" target="_blank">
+            <button class="discover-more">Discover More</button>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <button class="arrow-left" onclick="moveSlide(-1)">&#10094;</button>
+    <button class="arrow-right" onclick="moveSlide(1)">&#10095;</button>
+
+    <div class="dots">
+      <span class="dot" onclick="currentSlide(0)"></span>
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+      <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+  </div>
+
+  <section class="about-men">
+    <section id="about-section">
+      <h1 style="color: #f7c231;" "font-family:'Times New Roman';">"Louis Vuitton For Him"<h1>
+      <h1>About LV Men's Collection</h1>
+      <h3 style="color:black;">Summer Edition for Him</h3>
+      <p>Louis Vuitton’s <b>summer collection</b> brings lightweight fabrics and vibrant prints perfect for the heat.<br> From linen shirts to bold accessories like monogrammed sunglasses, every piece is designed for effortless summer style.<br>Elevate your vacation wardrobe with travel-ready duffel bags and colorful essentials.</p>
+      <br>
+      <h3 style="color:black;">Winter Edition for Him</h3>
+      <p>Stay stylish this <b>winter</b> with Louis Vuitton’s collection of cozy wool coats, cashmere scarves, and leather gloves.<br> Deep hues and luxurious fabrics make these pieces a must-have for frosty days.<br> Whether for the slopes or city streets, LV combines warmth with elegance.</p>
+      <br>
+      <h3 style="color:black;">Limited Edition for Him</h3>
+      <p>Louis Vuitton’s <b>limited-edition</b> collection features exclusive designs and iconic collaborations.<br> With innovative takes on classic monograms and bold accessories, <br>these rare pieces are perfect for collectors and fashion enthusiasts alike.</p>
+    </section>
+  </section>
+
+  <section class="faq">
+    <section id="faq-section">
+      <h3>Frequently Asked Questions</h3>
+
+      <div class="accordion-item">
+        <button class="accordion-button">What is Louis Vuitton?</button>
+        <div class="accordion-content">
+          <p>Louis Vuitton is a French luxury fashion brand known for its high-quality craftsmanship and innovative designs.</p>
+          <img src="MyImages/logolv.jpg" alt="Louis Vuitton Logo" class="faq-image">
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion-button">How do I style the collection?</button>
+        <div class="accordion-content">
+          <p>Mixing streetwear with high fashion is a great way to style Louis Vuitton pieces. Pair them with simple yet elegant items to create a balanced look.</p>
+          <img src="MyImages/faq2.png" alt="Styling Tips" class="faq-image">
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion-button">What materials are used in the Louis Vuitton collection?</button>
+        <div class="accordion-content">
+          <p>The collection uses premium leather, canvas, and other luxurious materials to ensure durability and style.</p>
+          <img src="MyImages/faq3.png" alt="Materials" class="faq-image">
+        </div>
+      </div>
+
+      <!-- New FAQ Items -->
+      <div class="accordion-item">
+        <button class="accordion-button"> How do I know if my Louis Vuitton bag is authentic?</button>
+        <div class="accordion-content">
+          <p>To ensure your Louis Vuitton bag is authentic, pay attention to details like the stitching, the logo, the hardware, and the materials used. Genuine Louis Vuitton bags have precise stitching, with no loose threads or imperfections. The monogram should be symmetrical, and the LV logo should be clear and consistent. Additionally, the hardware (zippers, locks, etc.) should feel solid and high-quality, and the lining should be made of premium materials, such as canvas or leather.</p>
+          <img src="MyImages/faq4.png" alt="Authentics" class="faq-image">
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion-button">What is the best way to clean and maintain my Louis Vuitton leather bags?</button>
+        <div class="accordion-content">
+          <p> To clean and maintain your Louis Vuitton leather bags, use a soft, damp cloth to gently wipe away dirt and stains. For leather bags, consider using a specialized leather cleaner and conditioner that is suitable for luxury items. Avoid using harsh chemicals or abrasive materials that could damage the leather. </p>
+        </div>
+      </div>
+    </section>
+  </section>
+
+  <!-- Hidden Image Gallery -->
+  <section class="hidden-gallery">
+    <button class="read-more-btn">Read More</button>
+    <div class="gallery hidden">
+      <div class="gallery-grid">
+        <img src="MyImages/logolv.jpg" alt="Logo LV Image">
+        <img src="MyImages/faq2.png" alt="Hoodie Image">
+        <img src="MyImages/faq3.png" alt="Leather Bag Image">
+        <img src="MyImages/faq4.png" alt="Zipper Image">
+        <img src="MyImages/about2.png" alt="Outfit Image">
+        <img src="MyImages/outfit3.png" alt="Sneakers Image">
+        <img src="MyImages/outfit4.png" alt="Jacket Image">
+        <img src="MyImages/outfit2.png" alt="Glasses Image">
+      </div>
+    </div>
+  </section>
+
+<!-- Comment Section -->
+<section class="comments-section">
+  <h2>Share your insights on how you style!</h2>
+
+  <!-- Comment Form -->
+  <div class="comment-form">
+    <textarea id="comment-text" placeholder="Write your comment here..."></textarea>
+    <input type="file" id="comment-image" placeholder="Upload Image">
+    <button id="submit-comment">Submit Comment</button>
+  </div>
+
+  <!-- Display Comments -->
+  <div class="comments">
+    <!-- Existing Comments (Example) -->
+    <div class="comment">
+      <img src="MyImages/komen1.jpg" alt="User 1" class="comment-img">
+      <div class="comment-text">
+        <strong>Sophia</strong>: I absolutely love mixing Louis Vuitton with casual streetwear! I often pair my LV Speedy bag with a relaxed hoodie and denim jeans for a chic yet laid-back look. It’s the perfect balance of elegance and comfort! The key is to let the LV piece be the statement, and keep the rest of the outfit simple.
+      </div>
+    </div>
+    <div class="comment">
+      <img src="MyImages/komen3.jpg" alt="User 2" class="comment-img">
+      <div class="comment-text">
+        <strong>Alex</strong>: The jacket is amazing! Very chic look.
+      </div>
+    </div>
+    <div class="comment">
+      <img src="MyImages/komen2.jpg" alt="User 3" class="comment-img">
+      <div class="comment-text">
+        <strong>Diva</strong>: I always style my Louis Vuitton scarves or shawls with oversized coats or jackets during the colder months. Layering them over a sleek outfit adds a pop of pattern and luxury that elevates even the simplest of looks.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Thank You Modal -->
+<div class="thank-you-modal" id="thank-you-modal">
+  <p>Thank You for Commenting!</p>
+  <button class="okay-btn" id="okay-btn">Okay</button>
+</div>
+
+ <footer>
+
+    <div class="footer-section">
+        <h3>Our Blog</h3>
+        <ul>
+            <li><a href="oi3.html">Cultural Influence</a></li>
+            <li><a href="oi1.html">Artistic Collaborations</a></li>
+            <li><a href="oi2.html">Environmental Commitment</a></li>
+          
+        </ul>
+    </div>
+    <div class="footer-section">
+        <h3>About Us</h3>
+        <ul>
+            <li><a href="ot.html">Our Team</a></li>
+            <li><a href="vm.html">Vision and Mission</a></li>
+            <li><a href="oi.html">Legacy and Impact</a></li>
+        </ul>
+    </div>
+    <div class="footer-section">
+        <h3>Follow Us</h3>
+        <ul>
+        <li><a href="https://www.instagram.com/louisvuitton/" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-instagram"></i> Instagram</a></li>
+        <li><a href="https://www.youtube.com/user/LOUISVUITTON" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-youtube"></i> YouTube</a></li>
+        <li><a href="https://x.com/louisvuitton" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-twitter"></i> Twitter</a></li>
+    </ul>
+    </div>
+    <div class="footer-section">
+        <h3>Newsletter</h3>
+        <form>
+            <input type="email" placeholder="Enter your email">
+            <button type="submit">Subscribe</button>
+        </form>
+    </div>
+
+    </footer>
+
+<script>
+    let currentIndex = 0;
+    const carouselItems = document.querySelectorAll('.carousel-item');
+    const dots = document.querySelectorAll('.dot');
+
+    function moveSlide(step) {
+        currentIndex += step;
+        if (currentIndex >= carouselItems.length) currentIndex = 0;
+        if (currentIndex < 0) currentIndex = carouselItems.length - 1;
+        updateCarousel();
+    }
+
+    function currentSlide(index) {
+        currentIndex = index;
+        updateCarousel();
+    }
+
+    function updateCarousel() {
+        const carousel = document.querySelector('.carousel');
+        carousel.style.transform = `translateX(-${currentIndex * 100}%)`;  // Corrected line
+
+        dots.forEach(dot => dot.classList.remove('active'));
+        dots[currentIndex].classList.add('active');
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        dots[currentIndex].classList.add('active');
+    });
+
+    // JavaScript for Read More functionality
+    const readMoreBtn = document.querySelector('.read-more-btn');
+    const gallery = document.querySelector('.gallery');
+
+    readMoreBtn.addEventListener('click', () => {
+        gallery.classList.toggle('hidden');  // Toggle visibility of the gallery
+        readMoreBtn.textContent = gallery.classList.contains('hidden') ? 'Read More' : 'Read Less';
+        
+        // Smooth scrolling
+        gallery.scrollIntoView({ behavior: 'smooth' });
+    });
+
+    // Accordion functionality
+    document.addEventListener("DOMContentLoaded", function() {
+        const accordions = document.querySelectorAll('.accordion-button');
+
+        accordions.forEach(accordion => {
+            accordion.addEventListener('click', () => {
+                const content = accordion.nextElementSibling;
+                
+                // Toggle content visibility
+                content.style.display = content.style.display === 'block' ? 'none' : 'block';
+            });
+        });
+    });
+
+    // Function to handle comment submission
+    document.getElementById("submit-comment").addEventListener("click", function () {
+        const commentText = document.getElementById("comment-text").value;
+        const commentImage = document.getElementById("comment-image").files[0]; // Get the image file
+
+        // Check if comment text is empty
+        if (commentText.trim() === "") {
+            alert("Please enter a comment!");
+            return;
+        }
+
+        // Create a new comment element
+        const newComment = document.createElement("div");
+        newComment.classList.add("comment");
+
+        // Create the comment image
+        const commentImg = document.createElement("img");
+        commentImg.classList.add("comment-img");
+        commentImg.src = commentImage ? URL.createObjectURL(commentImage) : "default-avatar.jpg"; // Fallback image
+        commentImg.alt = "User Image";
+        newComment.appendChild(commentImg);
+
+        // Add an event listener to open the image in full size on click
+        commentImg.addEventListener("click", function() {
+            // Open the image in a new tab (full-size view)
+            const fullSizeImage = window.open(commentImg.src, '_blank');
+            fullSizeImage.focus();
+        });
+
+        // Create the comment text
+        const commentTextDiv = document.createElement("div");
+        commentTextDiv.classList.add("comment-text");
+        commentTextDiv.innerHTML = `<strong>You</strong>: ${commentText}`; // Corrected line
+        newComment.appendChild(commentTextDiv);
+
+        // Prepend the new comment to the comments section
+        document.querySelector(".comments").prepend(newComment);
+
+        // Clear the form fields
+        document.getElementById("comment-text").value = "";
+        document.getElementById("comment-image").value = "";
+
+        // Show the modal
+        showModal();
+    });
+
+    // Show modal function
+    function showModal() {
+        const modal = document.getElementById("thank-you-modal");
+        modal.classList.add("show");
+    }
+
+    // Close modal function
+    function closeModal() {
+        const modal = document.getElementById("thank-you-modal");
+        modal.classList.remove("show");
+    }
+
+    const modal = document.getElementById('thank-you-modal');
+    const okayBtn = document.getElementById('okay-btn');
+
+    // Close the modal when the "Okay" button is clicked
+    okayBtn.addEventListener('click', closeModal);
+
+    // Select the mode toggle button and the body element
+    const modeToggle = document.getElementById('mode-toggle');
+    const body = document.body;
+
+    // Check for saved theme preference
+    if (localStorage.getItem('theme') === 'dark') {
+        body.classList.add('dark-mode');
+        modeToggle.classList.add('moon-mode');
+    } else {
+        body.classList.remove('dark-mode');
+        modeToggle.classList.add('sun-mode');
+    }
+
+    // Toggle light/dark mode on button click
+    modeToggle.addEventListener('click', () => {
+        body.classList.toggle('dark-mode');
+        if (body.classList.contains('dark-mode')) {
+            modeToggle.classList.remove('sun-mode');
+            modeToggle.classList.add('moon-mode');
+            localStorage.setItem('theme', 'dark');
+        } else {
+            modeToggle.classList.remove('moon-mode');
+            modeToggle.classList.add('sun-mode');
+            localStorage.setItem('theme', 'light');
+        }
+    });
+</script>
+</body>
+</html>
